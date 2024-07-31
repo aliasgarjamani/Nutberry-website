@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutBerry - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-bottom: 5px solid #ff6600;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 2em;
+      margin-top: 0;
+      color: #333;
+    }
+
+    .featured-products, .product {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      margin-bottom: 30px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex: 1 1 calc(33.333% - 20px);
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    .product:hover {
+      transform: scale(1.02);
+    }
+
+    .product img {
+      max-width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-info h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .product-info p {
+      margin: 5px 0;
+      font-size: 1.1em;
+    }
+
+    .product-info a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .product-info a:hover {
+      color: #cc5200;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .contact-form button {
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #cc5200;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info a {
+      color: #ff6600;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #cc5200;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      border-top: 5px solid #ff6600;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .featured-products {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .testimonials {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials h3 {
+      margin-top: 0;
+    }
+
+    .testimonial {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-left: 3px solid #ff6600;
+      background-color: #fff;
+    }
+
+    .testimonial p {
+      margin: 0;
+      font-style: italic;
+    }
+
+    .testimonial-customer {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .promotion {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .promotion h2 {
+      margin-top: 0;
+    }
+
+    .promotion a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #cc5200;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .promotion a:hover {
+      background-color: #993d00;
+    }
+
+    .product-details {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product-details .details, .product-details .reviews {
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+    }
+
+    .product-details .details img {
+      max-width: 100%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .product-details .reviews {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NutBerry</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2 class="section-title">Welcome to NutBerry</h2>
+      <p>Welcome to NutBerry, your one-stop shop for the latest and greatest in technology, fashion, and lifestyle products. We offer a curated selection of high-quality items to cater to your needs and preferences. Discover our wide range of products designed to enhance your lifestyle and make shopping a pleasure.</p>
+      <p>Our commitment to quality and customer satisfaction is unmatched. We strive to provide you with an exceptional shopping experience and offer products that meet the highest standards. Explore our website to find the best deals and latest trends in the market.</p>
+      
+      <div class="promotion">
+        <h2>Special Offer: 20% Off on All Products!</h2>
+        <p>Don't miss out on our exclusive sale. Use code <strong>SPECIAL20</strong> at checkout to get 20% off on your entire order.</p>
+        <a href="#products">Shop Now</a>
+      </div>
+      
+      <h2 class="section-title">Featured Products</h2>
+      <div class="featured-products">
+        <div class="product">
+          <img src="https://via.placeholder.com/600x400" alt="Featured Product 1">
+          <div class="product-info">
+            <h3>Featured Product 1</h3>
+            <p>Price: ₹30,000</p>
+            <p>Discover our top-rated product that combines quality with innovation. It's a must-have for tech enthusiasts and gadget lovers.</p>
+            <a href="#">View Details</a>
+          </div>
+        </div>
+        <div class="product">
+          <img src="https://via.placeholder.com/600x400" alt="Featured Product 2">
+          <div class="product-info">
+                    <div class="product">
+            <img src="https://via.placeholder.com/600x400" alt="Featured Product 2">
+            <div class="product-info">
+              <h3>Featured Product 2</h3>
+              <p>Price: ₹25,000</p>
+              <p>Explore this popular item renowned for its exceptional features and sleek design. Perfect for anyone seeking the latest trends.</p>
+              <a href="#">View Details</a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p>NutBerry was founded with a mission to provide high-quality products and an exceptional shopping experience. Our team is passionate about technology, fashion, and lifestyle, and we are dedicated to offering products that meet the highest standards of quality and innovation.</p>
+      <p>Our commitment to customer satisfaction drives us to continuously improve our offerings and provide you with the best shopping experience. From our extensive product range to our responsive customer service, we strive to exceed your expectations at every turn.</p>
+      <p>Thank you for choosing NutBerry. We look forward to serving you and helping you find the perfect products for your needs.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <form class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <p>For more information, please reach out to us:</p>
+        <p>Email: <a href="mailto:support@nutberry.com">support@nutberry.com</a></p>
+        <p>Phone: +91 123 456 7890</p>
+        <p>Address: 123 NutBerry Street, Tech City, India</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 NutBerry. All rights reserved.</p>
+  </footer>
+</body>
+</html>
